@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OKIÜ TV</title>
+  <link rel="shortcut icon" href="images/iconoweb.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="contenedor_carga">
+    <img src="https://github.com/okiuofficial/OKIU-app/blob/main/images/inits.jpg?raw=true" alt="" class="imagencarga">
+    <div id="carga"></div>
+    <p>Cargando</p>
+</div>
+
+<script type="text/javascript">
+        window.onload = function(){
+            var contenedor = document.getElementById('contenedor_carga');
+
+            contenedor.style.visibility = 'hidden';
+            contenedor.style.opacity = '0';
+        }
+</script>
+
+<div class="voddd">
+  
+   <video id="usastreams-video" class="video-js vjs-default-skin" controls preload poster="images/poster.png" loop="">
+    <source src="https://videostreaming.cloudserverlatam.com/chavotv/chavotv/playlist.m3u8?WebM3UCL" type="application/x-mpegURL"><!-- type="video/mp4" -->
+    </video>    
+          <!-- 1 -->
+          <script type="text/javascript" src ="js/unoOkiutv.js"></script>
+
+          <!-- 2    -->
+          <script type="text/javascript" src ="js/dosOkiutv.js"></script>
+
+          <!-- 3 -->
+          <script src="js/TresOkiutv.js"></script>    
+          <!-- imagen grande -->
+          <script type="text/javascript" src ="js/videojs-brand.min.js"></script>    
+  <script>      
+
+      (function(window, videojs) {        var player = window.player = videojs('usastreams-video')
+
+        ;player.brand({image: "images/1.png",destination: "https://laokiu.wordpress.com/",destinationTarget: "#"})
+
+        ;player.watermark({file: "https://okiuapp.files.wordpress.com/2021/05/1619898713657.png?resize=150%2C100",xpos: 50,ypos: 50, xrepeat: 0, opacity: 0.7,url: ""});          return false;        }      (window, window.videojs)); 
+
+  </script>
+
+      <!-- <img src="https://okiuapp.files.wordpress.com/2021/05/20210501_134301_0000.png"> -->
+</div>
+
+
+</body>
+</html>
