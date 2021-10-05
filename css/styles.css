@@ -195,11 +195,11 @@ height: 0px;
 
 /*imagen gedradada dentro de video*/
 .vjs-brand-container img {
-  position: absolute;
-  bottom: 140px;
-  left: 30px;
-  width: 40px;
-  filter: invert(1);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 55%;
+  opacity: 0.8;
 }
 /*------------------------- stream video CSS ------------------------------*/
 
@@ -222,7 +222,7 @@ body {
   border-color: #00000000;
   border-radius: 10px;
   top: 50%;
-  left: 50%;
+  left: -100000%;
   border: 0;
   padding: 0;
 }
@@ -360,7 +360,9 @@ font-style: normal;
 }
 .vjs-icon-play:before, .video-js .vjs-play-control .vjs-icon-placeholder:before, .video-js .vjs-big-play-button .vjs-icon-placeholder:before {
 content: "\f101";
-color: #ffffff;
+color: #000;
+position: relative;
+top: -10px;
 
 }
 .vjs-icon-play-circle {
@@ -379,7 +381,7 @@ font-style: normal;
 }
 .vjs-icon-pause:before, .video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before {
 content: "\f103";
-color: #fff;
+color: #000;
 }
 
 .vjs-icon-volume-mute, .video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder {
@@ -416,6 +418,8 @@ font-style: normal;
 }
 .vjs-icon-volume-high:before, .video-js .vjs-mute-control .vjs-icon-placeholder:before {
 content: "\f107";
+position: relative;
+top: -8px
 }
 
 .vjs-icon-fullscreen-enter, .video-js .vjs-fullscreen-control .vjs-icon-placeholder {
@@ -426,6 +430,9 @@ font-style: normal;
 .vjs-icon-fullscreen-enter:before, .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before {
 content: "\f108";
 font-weight: bold;
+color: #000;
+position: relative;
+top: -8px;
 }
 
 .vjs-icon-fullscreen-exit, .video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder {
@@ -662,6 +669,8 @@ font-style: normal;
 }
 .vjs-icon-picture-in-picture-enter:before, .video-js .vjs-picture-in-picture-control .vjs-icon-placeholder:before {
 content: "\f121";
+position: relative;
+top: -8px;
 }
 
 .vjs-icon-picture-in-picture-exit, .video-js.vjs-picture-in-picture .vjs-picture-in-picture-control .vjs-icon-placeholder {
@@ -1362,6 +1371,8 @@ transition: visibility 0.1s, opacity 0.1s, height 0.1s, width 0.1s, left 0s, top
 width: 5em;
 height: 3em;
 margin: 0;
+position: relative;
+top: -10px;
 }
 .video-js .vjs-volume-panel.vjs-hover .vjs-volume-control.vjs-volume-vertical, .video-js .vjs-volume-panel:active .vjs-volume-control.vjs-volume-vertical, .video-js .vjs-volume-panel:focus .vjs-volume-control.vjs-volume-vertical, .video-js .vjs-volume-panel .vjs-volume-control:active.vjs-volume-vertical, .video-js .vjs-volume-panel.vjs-hover .vjs-mute-control ~ .vjs-volume-control.vjs-volume-vertical, .video-js .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-vertical {
 left: -3.5em;
@@ -1383,6 +1394,8 @@ transition: visibility 1s, opacity 1s, height 1s 1s, width 1s 1s, left 1s 1s, to
 
 .video-js .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
 transition: visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s;
+position: relative;
+top: -10px;
 }
 
 .video-js.vjs-no-flex .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
@@ -1403,6 +1416,11 @@ left: 0.5em;
 
 .video-js .vjs-volume-panel {
 display: flex;
+position: fixed;
+top: 57%;
+left: 40px;
+width: 100px;
+height: 100px;
 }
 
 .video-js .vjs-volume-bar {
@@ -1479,7 +1497,7 @@ vertical-align: middle;
 background-repeat: no-repeat;
 background-position: 50% 50%;
 background-size: contain;
-background-color: #fff;
+background-color: #000;
 cursor: pointer;
 margin: 0;
 padding: 0;
@@ -1605,6 +1623,13 @@ display: none;
 .video-js .vjs-play-control {
 cursor: pointer;
 color: #000;
+background: #ffffff;
+position: fixed;
+top: 43.5%;
+left: 40px;
+width: 100px;
+height: 100px;
+border-radius: 100px;
 }
 
 .video-js .vjs-play-control .vjs-icon-placeholder {
@@ -1654,17 +1679,24 @@ transform: translateY(-1.5em);
 cursor: pointer;
 flex: none;
 color: #fff;
-position: absolute;
-left: 100px;
-bottom: 100px;
+position: fixed;
+top: 57%;
+right: 40px;
+width: 100px;
+height: 100px;
+z-index: 102;
 }
 .video-js .vjs-fullscreen-control {
 cursor: pointer;
 flex: none;
-color: #fff;
-position: absolute;
-bottom: 0px;
-right: 0;
+background: #fff;
+position: fixed;
+top: 43.5%;
+right: 40px;
+width: 100px;
+height: 100px;
+border-radius: 100px;
+z-index: 101;
 }
 .vjs-playback-rate > .vjs-menu-button,
 .vjs-playback-rate .vjs-playback-rate-value {
@@ -2032,8 +2064,9 @@ outline: none;
 background: none;
 }
 
-.video-js *:focus:not(:focus-visible),
+/* .video-js *:focus:not(:focus-visible), */
 .video-js .vjs-menu *:focus:not(:focus-visible) {
 outline: none;
-background: none;
+background: #fff;
+opacity: 0.9;
 }
