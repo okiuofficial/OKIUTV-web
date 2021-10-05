@@ -24,7 +24,7 @@
 <div class="voddd">
   
    <video id="usastreams-video" class="video-js vjs-default-skin" controls preload poster="images/poster.png" loop="">
-    <source src="https://srv5.zcast.com.br/simpsons/simpsons/playlist.m3u8" type="application/x-mpegURL"><!-- type="video/mp4" -->
+    <source src="https://srv5.zcast.com.br/simpsons/simpsons/playlist.m3u8" type="application/x-mpegURL" type="application/x-mpegURL"><!-- type="video/mp4" -->
     </video>    
           <!-- 1 -->
           <script type="text/javascript" src ="js/unoOkiutv.js"></script>
@@ -40,7 +40,7 @@
 
       (function(window, videojs) {        var player = window.player = videojs('usastreams-video')
 
-        ;player.brand({image: "images/1.png",destination: "https://laokiu.wordpress.com/",destinationTarget: "#"})
+        ;player.brand({image: "images/1.png"})
 
         ;player.watermark({file: "https://okiuapp.files.wordpress.com/2021/05/1619898713657.png?resize=150%2C100",xpos: 50,ypos: 50, xrepeat: 0, opacity: 0.7,url: ""});          return false;        }      (window, window.videojs)); 
 
