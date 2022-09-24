@@ -1517,6 +1517,7 @@ position: fixed;
 left: 105px;
 top: 45px;
 height: 100px;
+z-index: 104;
 }
 
 .vjs-no-flex .vjs-live-control {
